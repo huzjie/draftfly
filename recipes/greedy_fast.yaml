@@ -1,0 +1,16 @@
+# 贪心快速：输出与目标贪心逐 token 一致，适合对一致性要求极高的场景
+draft:
+  model: ngram
+  order: 4
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 6
+  adaptive: true
+  mode: greedy
+  temperature: 1.0
+  bonus_token: true
+  max_new_tokens: 128

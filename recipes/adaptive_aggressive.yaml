@@ -1,0 +1,17 @@
+# 激进自适应：窗口短、阈值宽，K 快速爬升，适合草稿较强
+draft:
+  model: ngram
+  order: 5
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 8
+  min_k: 4
+  max_k: 16
+  adaptive: true
+  mode: sampling
+  temperature: 1.0
+  max_new_tokens: 128

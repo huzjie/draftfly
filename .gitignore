@@ -1,0 +1,25 @@
+# secrets
+.env
+*.token
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# gen 脚本（生成器，不发布）
+_gen/
+
+# editors
+.idea/
+.vscode/
+.DS_Store

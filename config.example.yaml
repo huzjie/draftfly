@@ -1,0 +1,31 @@
+# draftfly 示例配置（填一份即可跑：python -m draftfly --config config.example.yaml doctor）
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 2.0
+  skill: 1.0
+  name: draft
+
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+  name: target
+
+engine:
+  k: 4
+  min_k: 2
+  max_k: 8
+  adaptive: true
+  mode: sampling
+  temperature: 1.0
+  top_k: 0
+  top_p: 1.0
+  bonus_token: true
+  max_new_tokens: 128
+  seed: 42
+  real_clock: false
+
+server:
+  host: 127.0.0.1
+  port: 8000

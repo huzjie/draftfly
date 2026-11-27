@@ -1,0 +1,17 @@
+# 长上下文：大 max_new_tokens + 自适应 K，适合长文生成
+draft:
+  model: ngram
+  order: 4
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 4
+  min_k: 2
+  max_k: 8
+  adaptive: true
+  mode: sampling
+  temperature: 0.8
+  max_new_tokens: 1024

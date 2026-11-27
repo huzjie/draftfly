@@ -1,0 +1,19 @@
+# 平衡默认：草稿 order=3 / 目标 order=6，采样 + 自适应 K
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 4
+  min_k: 2
+  max_k: 8
+  adaptive: true
+  mode: sampling
+  temperature: 1.0
+  bonus_token: true
+  max_new_tokens: 128
+  seed: 42

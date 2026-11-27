@@ -1,0 +1,17 @@
+# 采样创意：temperature + top-p 增加多样性，接受采样仍保证分布一致
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 4
+  adaptive: true
+  mode: sampling
+  temperature: 0.9
+  top_p: 0.95
+  bonus_token: true
+  max_new_tokens: 256

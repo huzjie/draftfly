@@ -1,0 +1,2 @@
+# draftfly 零依赖，无需安装任何第三方包。Python 3.8+ 即可。
+# 如使用 pip install -e . 安装，此处为空亦可。

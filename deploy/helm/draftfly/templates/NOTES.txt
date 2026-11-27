@@ -1,0 +1,7 @@
+draftfly 已部署！
+
+访问服务：
+  kubectl --namespace {{ .Release.Namespace }} port-forward svc/{{ include "draftfly.fullname" . }} 8000:{{ .Values.service.port }}
+
+健康检查：
+  curl http://localhost:8000/health

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.git
+.gitignore
+.env
+_venv/
+venv/
+tests/
+docs/
+deploy/
+benchmarks/
+examples/
+*.md
+!_gen

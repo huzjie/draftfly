@@ -1,0 +1,15 @@
+# OpenAI 兼容后端：草稿与目标各指向一个 /v1/chat/completions 端点
+draft:
+  model: openai
+  base_url: http://localhost:8001
+  model_name: draft-model
+  api_key: ""
+target:
+  model: openai
+  base_url: http://localhost:8002
+  model_name: target-model
+  api_key: ""
+engine:
+  k: 4
+  mode: sampling
+  max_new_tokens: 64

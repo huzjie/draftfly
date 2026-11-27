@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: draftfly-config
+  namespace: draftfly
+data:
+  config.yaml: |
+    draft:
+      model: ngram
+      order: 3
+      cost_ms: 2.0
+    target:
+      model: ngram
+      order: 6
+      cost_ms: 50.0
+    engine:
+      k: 4
+      adaptive: true
+      mode: sampling
+      temperature: 1.0
+      max_new_tokens: 128
+      seed: 42
+    server:
+      host: 0.0.0.0
+      port: 8000

@@ -1,0 +1,18 @@
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 4
+  adaptive: true
+  mode: sampling
+  temperature: 0.9
+  top_p: 0.95
+  max_new_tokens: 256
+server:
+  host: 127.0.0.1
+  port: 8000

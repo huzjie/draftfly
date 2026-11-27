@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: draftfly
+  namespace: draftfly
+  labels:
+    app: draftfly
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: draftfly
+  template:
+    metadata:
+      labels:
+        app: draftfly
+    spec:
+      containers:
+        - name: draftfly
+          image: draftfly:1.0.0
+          imagePullPolicy: IfNotPresent
+          command: ["python", "-m", "draftfly", "serve"]
+          ports:
+            - containerPort: 8000
+              name: http
+          volumeMounts:
+            - name: config
+              mountPath: /app/config.yaml
+              subPath: config.yaml
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 1
+              memory: 512Mi
+      volumes:
+        - name: config
+          configMap:
+            name: draftfly-config

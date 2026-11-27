@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: draftfly
+  namespace: draftfly
+spec:
+  selector:
+    app: draftfly
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+  type: ClusterIP

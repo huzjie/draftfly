@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: draftfly
+  namespace: draftfly
+spec:
+  rules:
+    - host: draftfly.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: draftfly
+                port:
+                  number: 80

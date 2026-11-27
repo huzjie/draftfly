@@ -1,0 +1,14 @@
+# 端侧低延迟：草稿极快（cost 极低），目标也轻，追求首 token 时延
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 0.5
+target:
+  model: ngram
+  order: 5
+  cost_ms: 8.0
+engine:
+  k: 3
+  adaptive: true
+  mode: greedy
+  max_new_tokens: 64

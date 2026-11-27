@@ -1,0 +1,45 @@
+replicaCount: 2
+
+image:
+  repository: draftfly
+  tag: "1.0.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+config:
+  draft:
+    model: ngram
+    order: 3
+    cost_ms: 2.0
+  target:
+    model: ngram
+    order: 6
+    cost_ms: 50.0
+  engine:
+    k: 4
+    adaptive: true
+    mode: sampling
+    temperature: 1.0
+    max_new_tokens: 128
+    seed: 42
+  server:
+    host: 0.0.0.0
+    port: 8000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 1
+    memory: 512Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70

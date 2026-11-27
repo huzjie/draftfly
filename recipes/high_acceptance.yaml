@@ -1,0 +1,15 @@
+# 高接受率：草稿 order 逼近目标，接受率 > 0.9，加速比上限高
+draft:
+  model: ngram
+  order: 5
+  cost_ms: 3.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 8
+  adaptive: true
+  mode: sampling
+  temperature: 1.0
+  max_new_tokens: 128

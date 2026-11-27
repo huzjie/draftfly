@@ -1,0 +1,17 @@
+# 高吞吐：大 K + 贪心 + bonus token，把目标一次前向摊到最多 token
+draft:
+  model: ngram
+  order: 5
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  k: 8
+  min_k: 4
+  max_k: 16
+  adaptive: true
+  mode: greedy
+  bonus_token: true
+  max_new_tokens: 256

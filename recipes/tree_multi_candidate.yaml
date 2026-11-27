@@ -1,0 +1,16 @@
+# 树式多候选：草稿 top-2 分支展开深度 4，目标一次验证整棵树
+draft:
+  model: ngram
+  order: 3
+  cost_ms: 2.0
+target:
+  model: ngram
+  order: 6
+  cost_ms: 50.0
+engine:
+  mode: sampling
+  temperature: 1.0
+  max_new_tokens: 128
+tree:
+  depth: 4
+  branching: 2

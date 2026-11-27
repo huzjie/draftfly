@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "draftfly.fullname" . }}
+  labels:
+    {{- include "draftfly.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    draft:
+      model: {{ .Values.config.draft.model }}
+      order: {{ .Values.config.draft.order }}
+      cost_ms: {{ .Values.config.draft.cost_ms }}
+    target:
+      model: {{ .Values.config.target.model }}
+      order: {{ .Values.config.target.order }}
+      cost_ms: {{ .Values.config.target.cost_ms }}
+    engine:
+      k: {{ .Values.config.engine.k }}
+      adaptive: {{ .Values.config.engine.adaptive }}
+      mode: {{ .Values.config.engine.mode }}
+      temperature: {{ .Values.config.engine.temperature }}
+      max_new_tokens: {{ .Values.config.engine.max_new_tokens }}
+      seed: {{ .Values.config.engine.seed }}
+    server:
+      host: {{ .Values.config.server.host }}
+      port: {{ .Values.config.server.port }}
